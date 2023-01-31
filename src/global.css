@@ -1,0 +1,12 @@
+/** @format */
+
+:root {
+  --text-color: #000000;
+  --text-color-primary: #da6c66;
+  --text-color-secondary: #eeb30d;
+
+  --background-color: white;
+  --background-color-secondary: #f8f7f1;
+
+  --font-family: 'Manrope';
+}
