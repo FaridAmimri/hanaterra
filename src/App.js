@@ -4,6 +4,7 @@ import './global.css'
 import Navbar from './components/Navbar'
 import Intro from './components/Intro'
 import Service from './components/Service'
+import Property from './components/Property'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <Intro />
       <Service />
+      <Property />
     </div>
   )
 }
