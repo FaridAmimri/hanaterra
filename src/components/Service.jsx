@@ -55,7 +55,7 @@ const ServiceItem = styled.div`
 const Picto = styled.div`
   width: 56px;
   height: 56px;
-  color: var(--text-color-primary);
+  color: var(--text-color-secondary);
   svg {
     width: 100%;
     height: 100%;
