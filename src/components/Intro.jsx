@@ -4,9 +4,7 @@ import '../global.css'
 import styled from 'styled-components'
 import MuiButton from './MuiButton'
 import HouseImg from '../assets/house.png'
-import PhotoSizeSelectActualIcon from '@mui/icons-material/PhotoSizeSelectActual'
-import CropIcon from '@mui/icons-material/Crop'
-import HomeIcon from '@mui/icons-material/Home'
+import { introData } from '../data'
 
 function Intro() {
   return (
@@ -15,8 +13,8 @@ function Intro() {
         <Header>HANATERRA CONSTRUCTION</Header>
         <Title>La Meilleure Place Pour Trouver Votre Maison De Rêve</Title>
         <Description>
-          Devenez propriétaire en Côte d'ivoire. Un projet situé au sud sur
-          l'axe Abidjan Yamoussoukro, proche de l'autoroute du nord.
+          Devenez propriétaire en Côte d'ivoire. Un projet situé sur l'axe
+          Abidjan Yamoussoukro, proche de l'autoroute du nord.
         </Description>
         <Contact>
           <ContactText>Offre Promotionnelle de lancement</ContactText>
@@ -25,33 +23,15 @@ function Intro() {
       </Left>
       <Right>
         <InfoContainer>
-          <Item>
-            <Quantity>
-              <Picto>
-                <PhotoSizeSelectActualIcon />
-              </Picto>
-              <Content>65</Content>
-            </Quantity>
-            <Category>Hectares</Category>
-          </Item>
-          <Item>
-            <Quantity>
-              <Picto>
-                <CropIcon />
-              </Picto>
-              <Content>400</Content>
-            </Quantity>
-            <Category>Lots</Category>
-          </Item>
-          <Item>
-            <Quantity>
-              <Picto>
-                <HomeIcon />
-              </Picto>
-              <Content>500m2</Content>
-            </Quantity>
-            <Category>Superficie</Category>
-          </Item>
+          {introData.map((item) => (
+            <Item key={item.id}>
+              <Quantity>
+                <Picto>{item.picto}</Picto>
+                <Content>{item.quantity}</Content>
+              </Quantity>
+              <Category>{item.category}</Category>
+            </Item>
+          ))}
         </InfoContainer>
         <ImageContainer>
           <Image src={HouseImg} />
