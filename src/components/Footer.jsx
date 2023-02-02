@@ -6,8 +6,74 @@ import MuiButton from './MuiButton'
 import PhonePng from '../assets/phone.png'
 import SendPng from '../assets/send.png'
 import MuiInput from './MuiInput'
+import emailjs from '@emailjs/browser'
+import CircularProgress from '@mui/material/CircularProgress'
+import { useRef, useState } from 'react'
+
+const initialValues = {
+  name: '',
+  email: '',
+  message: ''
+}
 
 function Footer() {
+  const formRef = useRef()
+
+  const [values, setValues] = useState(initialValues)
+  const [errors, setErrors] = useState({})
+  const [success, setSuccess] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setValues({
+      ...values,
+      [name]: value
+    })
+  }
+
+  const validate = () => {
+    let temp = {}
+    const regexEmail = /\S+@\S+\.\S+/
+
+    temp.name = values.name ? '' : 'Entrer un nom'
+    temp.email = regexEmail.test(values.email) ? '' : 'Entrer un email correct'
+    temp.message = values.message ? '' : 'Entrer un message'
+    setErrors({ ...temp })
+    return Object.values(temp).every((x) => x === '')
+  }
+
+  const resetForm = () => {
+    setValues(initialValues)
+    setErrors({})
+  }
+
+  const onClick = (e) => {
+    e.preventDefault()
+
+    if (validate()) {
+      setLoading(true)
+      emailjs
+        .sendForm(
+          'service_vjipffb',
+          'template_rlelajz',
+          formRef.current,
+          'dxK4eOAw61JXwWe-i'
+        )
+        .then(
+          (result) => {
+            console.log(result.text)
+            resetForm()
+            setLoading(false)
+            setSuccess(true)
+          },
+          (error) => {
+            console.log(error.text)
+          }
+        )
+    }
+  }
+
   return (
     <Container>
       <Top>
@@ -54,23 +120,23 @@ function Footer() {
               }}
               noValidate
               autoComplete='off'
-              // ref={formRef}
+              ref={formRef}
             >
               <Form>
                 <LeftForm>
                   <MuiInput
                     label='Nom'
                     name='name'
-                    // value={values.name}
-                    // error={errors.name}
-                    // onChange={handleInputChange}
+                    value={values.name}
+                    error={errors.name}
+                    onChange={handleInputChange}
                   />
                   <MuiInput
                     label='Email'
                     name='email'
-                    // value={values.email}
-                    // error={errors.email}
-                    // onChange={handleInputChange}
+                    value={values.email}
+                    error={errors.email}
+                    onChange={handleInputChange}
                   />
                 </LeftForm>
                 <RightForm>
@@ -80,27 +146,27 @@ function Footer() {
                     multiline
                     rows={5}
                     fullWidth
-                    // value={values.message}
-                    // error={errors.message}
-                    // onChange={handleInputChange}
+                    value={values.message}
+                    error={errors.message}
+                    onChange={handleInputChange}
                   />
-                  <MuiButton
-                    variant='outlined'
-                    sx={{ margin: '8px' }}
-                    text='Envoyer'
-                    // onClick={handleSubmit}
-                  />
+                  <ButtonContainer>
+                    <MuiButton
+                      text='Envoyer'
+                      sx={{ margin: '8px' }}
+                      onClick={onClick}
+                    />
+                    {loading && (
+                      <LoaderContainer>
+                        <CircularProgress color='warning' />
+                      </LoaderContainer>
+                    )}
+                  </ButtonContainer>
                 </RightForm>
               </Form>
-
-              {/* {loading && (
-            <LoaderContainer>
-              <CircularProgress color='primary' />
-            </LoaderContainer>
-          )}
-          {success && (
-            <Notification>Votre message a bien été envoyé.</Notification>
-          )} */}
+              {success && (
+                <Notification>Votre message a bien été envoyé.</Notification>
+              )}
             </Box>
           </RightContact>
         </ContactContainer>
@@ -247,4 +313,25 @@ const RightForm = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const LoaderContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+`
+
+const Notification = styled.p`
+  padding-left: 8px;
+  color: var(--text-color-primary);
+
+  @media only screen and (max-width: 480px) {
+    margin: 0;
+    text-align: center;
+  }
 `
