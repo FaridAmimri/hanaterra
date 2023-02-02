@@ -1,6 +1,5 @@
 /** @format */
 
-import '../global.css'
 import styled from 'styled-components'
 import MuiButton from './MuiButton'
 import HouseImg from '../assets/house.png'
@@ -18,7 +17,7 @@ function Intro() {
         </Description>
         <Contact>
           <ContactText>Offre Promotionnelle de lancement</ContactText>
-          <MuiButton />
+          <MuiButton text='En savoir plus' />
         </Contact>
       </Left>
       <Right>
@@ -46,7 +45,7 @@ export default Intro
 const Container = styled.div`
   height: calc(100vh - 110px);
   display: flex;
-  background-color: var(--background-color-secondary);
+  background-color: var(--background-color-primary);
   padding: 20px 0 20px 20px;
 `
 
@@ -112,7 +111,7 @@ const InfoContainer = styled.div`
   top: 80%;
   left: 85px;
   border-radius: 16px;
-  background-color: var(--background-color-secondary);
+  background-color: var(--background-color-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -4,9 +4,11 @@
   --text-color: #000000;
   --text-color-primary: #da6c66;
   --text-color-secondary: #f09b73;
+  --text-color-tertiary: white;
 
   --background-color: white;
-  --background-color-secondary: #f8f7f1;
+  --background-color-primary: #f8f7f1;
+  --background-color-secondary: #000000;
 
   --font-family: 'Manrope';
 }

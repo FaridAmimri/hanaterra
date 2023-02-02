@@ -1,6 +1,5 @@
 /** @format */
 
-import '../global.css'
 import styled from 'styled-components'
 import { serviceData } from '../data'
 
@@ -47,7 +46,7 @@ const ServiceItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--background-color-secondary);
+  background-color: var(--background-color-primary);
   border-radius: 20px;
   padding: 30px;
 `

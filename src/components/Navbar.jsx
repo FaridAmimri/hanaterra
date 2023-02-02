@@ -1,6 +1,5 @@
 /** @format */
 
-import '../global.css'
 import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu'
 import LogoPng from '../assets/logo.png'
@@ -34,7 +33,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-color-secondary);
+  background-color: var(--background-color-primary);
   padding: 10px;
   font-size: 18px;
 `

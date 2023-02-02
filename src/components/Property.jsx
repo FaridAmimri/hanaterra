@@ -1,6 +1,5 @@
 /** @format */
 
-import '../global.css'
 import styled from 'styled-components'
 import PropertyImg from '../assets/property.png'
 
