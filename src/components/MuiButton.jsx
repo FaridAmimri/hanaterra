@@ -10,10 +10,12 @@ const ColorButton = styled(Button)(({ theme }) => ({
   }
 }))
 
-function MuiButton({ text }) {
+function MuiButton({ text, onClick }) {
   return (
     <div>
-      <ColorButton variant='contained'>{text}</ColorButton>
+      <ColorButton variant='contained' onClick={onClick}>
+        {text}
+      </ColorButton>
     </div>
   )
 }
