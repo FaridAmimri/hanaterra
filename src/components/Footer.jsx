@@ -75,7 +75,7 @@ function Footer() {
   }
 
   return (
-    <Container>
+    <Container id='contact'>
       <Top>
         <Left>
           <Title>
@@ -85,12 +85,12 @@ function Footer() {
         <Right>
           <Content>
             <Description>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viva mus
-              viverra auctor velit. Vestibulum id velit aliquam, placerat lacus
-              et, consequat leo.{' '}
+              Une promotion pour les 100 premiers lots. <br />
+              N'attendez plus ! Bâtissez votre avenir en achetant maintenant
+              votre lot à un prix imbattable.
             </Description>
             <Action>
-              <MuiButton text="C'est parti" />
+              <MuiButton text="C'est parti !" />
             </Action>
           </Content>
         </Right>
@@ -233,6 +233,7 @@ const Content = styled.div`
 
 const Description = styled.p`
   font-size: 18px;
+  line-height: 1.5;
 `
 
 const Action = styled.div``

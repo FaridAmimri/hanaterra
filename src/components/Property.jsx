@@ -1,9 +1,18 @@
 /** @format */
 
+import { useState } from 'react'
 import styled from 'styled-components'
+import MuiButton from './MuiButton'
 import PropertyImg from '../assets/property.png'
+import ImmoVideo from '../assets/immo.mp4'
 
 function Property() {
+  const [open, setOpen] = useState(false)
+
+  const onClick = () => {
+    setOpen(true)
+  }
+
   return (
     <Container>
       <Left>
@@ -26,11 +35,26 @@ function Property() {
             <Category>Prix</Category>
           </Item>
         </Statistics>
+        <ButtonContainer>
+          <MuiButton
+            text='Voir Le Projet >>>'
+            sx={{ margin: '8px' }}
+            onClick={onClick}
+          />
+        </ButtonContainer>
       </Left>
 
       <Right>
         <VideoContainer>
-          <Image src={PropertyImg}></Image>
+          <Image src={PropertyImg} open={open} alt='Construction immobilier' />
+          <Video
+            src={ImmoVideo}
+            autoPlay
+            loop
+            controls
+            open={open}
+            alt='présentation projet immobilier en video'
+          />
         </VideoContainer>
       </Right>
     </Container>
@@ -68,6 +92,11 @@ const Statistics = styled.div`
   width: 90%;
 `
 
+const ButtonContainer = styled.div`
+  display: flex;
+  align-self: flex-end;
+`
+
 const Item = styled.div`
   display: flex;
   flex-direction: column;
@@ -97,8 +126,16 @@ const VideoContainer = styled.div`
 `
 
 const Image = styled.img`
+  display: ${(props) => props.open && 'none'};
   position: absolute;
   width: 100%;
+  height: 100%;
+  right: 0;
+`
+
+const Video = styled.video`
+  display: ${(props) => !props.open && 'none'};
+  position: absolute;
   height: 100%;
   right: 0;
 `

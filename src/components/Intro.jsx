@@ -17,7 +17,9 @@ function Intro() {
         </Description>
         <Contact>
           <ContactText>Offre Promotionnelle de lancement</ContactText>
-          <MuiButton text='En savoir plus' />
+          <a href='#contact'>
+            <MuiButton text='En savoir plus' />
+          </a>
         </Contact>
       </Left>
       <Right>

@@ -14,7 +14,9 @@ function Navbar() {
         <List>
           <Item>Home</Item>
           <Item>Properties</Item>
-          <Item>Contact</Item>
+          <Item>
+            <a href='#contact'>Contact</a>
+          </Item>
         </List>
       </Center>
       <Right>
