@@ -12,8 +12,12 @@ function Navbar() {
       </Left>
       <Center>
         <List>
-          <Item>Home</Item>
-          <Item>Properties</Item>
+          <Item>
+            <a href='#service'>Nos services</a>
+          </Item>
+          <Item>
+            <a href='#property'>Pourquoi investir ?</a>
+          </Item>
           <Item>
             <a href='#contact'>Contact</a>
           </Item>

@@ -14,7 +14,7 @@ function Property() {
   }
 
   return (
-    <Container>
+    <Container id='property'>
       <Left>
         <Title>L'immobilier, une valeur sûre</Title>
         <Description>
@@ -137,5 +137,6 @@ const Video = styled.video`
   display: ${(props) => !props.open && 'none'};
   position: absolute;
   height: 100%;
+  width: 100%;
   right: 0;
 `
