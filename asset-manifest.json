@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/hanaterra/static/css/main.a35663c9.css",
+    "main.js": "/hanaterra/static/js/main.2d175293.js",
+    "static/media/immo.mp4": "/hanaterra/static/media/immo.ee7705c4d2b5479c6a8f.mp4",
+    "static/media/house.png": "/hanaterra/static/media/house.595af42e096ea19a52ea.png",
+    "static/media/property.png": "/hanaterra/static/media/property.3931b4895b71d01f1023.png",
+    "static/media/logo.png": "/hanaterra/static/media/logo.51631312f4ecc23a4abf.png",
+    "index.html": "/hanaterra/index.html",
+    "main.a35663c9.css.map": "/hanaterra/static/css/main.a35663c9.css.map",
+    "main.2d175293.js.map": "/hanaterra/static/js/main.2d175293.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a35663c9.css",
+    "static/js/main.2d175293.js"
+  ]
+}
