@@ -172,7 +172,7 @@ function Footer() {
         </ContactContainer>
 
         <BrandContainer>
-          <Brand>HanaTerra.</Brand>
+          <Brand>© HanaTerra.</Brand>
         </BrandContainer>
       </Bottom>
     </Container>
@@ -277,17 +277,6 @@ const ContactIcon = styled.img`
 
 const ContactText = styled.p``
 
-const BrandContainer = styled.div`
-  height: 50px;
-  display: flex;
-  justify-content: center;
-`
-
-const Brand = styled.span`
-  font-size: 18px;
-  align-self: center;
-`
-
 const RightContact = styled.div`
   flex: 2;
   padding: 20px;
@@ -335,4 +324,15 @@ const Notification = styled.p`
     margin: 0;
     text-align: center;
   }
+`
+
+const BrandContainer = styled.div`
+  height: 50px;
+  display: flex;
+  justify-content: center;
+`
+
+const Brand = styled.span`
+  font-size: 16px;
+  align-self: center;
 `
