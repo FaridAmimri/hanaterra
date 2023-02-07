@@ -19,7 +19,7 @@ function Property() {
         <Title>L'immobilier, une valeur sûre</Title>
         <Description>
           Le prix des terrains en ventes vaudra au minimum le double voir le
-          triple d'ici un an
+          triple d'ici un an. La valeur estimée du terrain dans 1 an : 6000 €.
         </Description>
         <Statistics>
           <Item>
@@ -67,6 +67,12 @@ const Container = styled.div`
   height: calc(100vh - 100px);
   padding: 50px 0 50px 50px;
   display: flex;
+
+  @media only screen and (max-width: 480px) {
+    height: 900px;
+    padding: 20px;
+    flex-direction: column;
+  }
 `
 
 const Left = styled.div`
@@ -75,31 +81,61 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 50px 50px 50px 0;
+
+  @media only screen and (max-width: 480px) {
+    padding: 20px;
+  }
 `
 
 const Title = styled.h1`
   font-size: 48px;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
 `
 
 const Description = styled.p`
   width: 90%;
   font-size: 18px;
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
 `
 
 const Statistics = styled.div`
   display: flex;
   justify-content: space-between;
   width: 90%;
-`
 
-const ButtonContainer = styled.div`
-  display: flex;
-  align-self: flex-end;
+  @media only screen and (max-width: 480px) {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 20px 0;
+  }
 `
 
 const Item = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 480px) {
+    margin: 0 20px 20px 0;
+  }
+`
+
+const ButtonContainer = styled.div`
+  display: flex;
+  align-self: flex-end;
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    margin: 20px 0;
+  }
 `
 
 const Quantity = styled.span`
@@ -115,6 +151,10 @@ const Category = styled.span`
 const Right = styled.div`
   flex: 1;
   position: relative;
+
+  @media only screen and (max-width: 480px) {
+    height: 255px;
+  }
 `
 
 const VideoContainer = styled.div`

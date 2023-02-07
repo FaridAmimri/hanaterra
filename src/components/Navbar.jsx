@@ -3,8 +3,15 @@
 import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu'
 import LogoPng from '../assets/logo.png'
+import { useState } from 'react'
 
 function Navbar() {
+  const [open, setOpen] = useState(false)
+
+  const handleMenu = () => {
+    setOpen(!open)
+  }
+
   return (
     <Container>
       <Left>
@@ -24,10 +31,21 @@ function Navbar() {
         </List>
       </Center>
       <Right>
-        <Hamburger>
+        <Hamburger onClick={handleMenu}>
           <MenuIcon />
         </Hamburger>
       </Right>
+      <Menu open={open}>
+        <MenuItem onClick={handleMenu}>
+          <a href='#service'>Nos services</a>
+        </MenuItem>
+        <MenuItem onClick={handleMenu}>
+          <a href='#property'>Pourquoi investir ?</a>
+        </MenuItem>
+        <MenuItem onClick={handleMenu}>
+          <a href='#contact'>Contact</a>
+        </MenuItem>
+      </Menu>
     </Container>
   )
 }
@@ -42,6 +60,12 @@ const Container = styled.div`
   background-color: var(--background-color-primary);
   padding: 10px;
   font-size: 18px;
+
+  @media only screen and (max-width: 480px) {
+    position: fixed;
+    width: 95vw;
+    z-index: 999;
+  }
 `
 
 const Left = styled.div`
@@ -66,6 +90,10 @@ const List = styled.ul`
   display: flex;
   justify-content: space-around;
   list-style-type: none;
+
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
 `
 
 const Item = styled.li``
@@ -79,4 +107,38 @@ const Right = styled.div`
 
 const Hamburger = styled.div`
   display: none;
+  cursor: pointer;
+
+  @media only screen and (max-width: 480px) {
+    display: flex;
+  }
+`
+
+const Menu = styled.ul`
+  display: none;
+  position: fixed;
+  height: calc(100vh - 70px);
+  width: 50vw;
+  background-color: var(--background-color-primary);
+  top: 70px;
+  right: ${(props) => (props.open ? '0px' : '-50vw')};
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999;
+  transition: all 1s ease;
+
+  @media only screen and (max-width: 480px) {
+    display: flex;
+  }
+`
+
+const MenuItem = styled.li`
+  z-index: 999;
+  cursor: pointer;
 `

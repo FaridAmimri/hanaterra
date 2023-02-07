@@ -75,7 +75,7 @@ function Footer() {
   }
 
   return (
-    <Container id='contact'>
+    <Container>
       <Top>
         <Left>
           <Title>
@@ -90,13 +90,15 @@ function Footer() {
               votre lot à un prix imbattable.
             </Description>
             <Action>
-              <MuiButton text="C'est parti !" />
+              <a href='#contact'>
+                <MuiButton text="C'est parti !" />
+              </a>
             </Action>
           </Content>
         </Right>
       </Top>
 
-      <Bottom>
+      <Bottom id='contact'>
         <ContactContainer>
           <LeftContact>
             <ContactItem>
@@ -187,12 +189,23 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+
+  @media only screen and (min-width: 1440px) {
+    height: 600px;
+  }
+  @media only screen and (max-width: 480px) {
+    height: 1200px;
+  }
 `
 
 const ContactContainer = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+  }
 `
 
 const Top = styled.div`
@@ -205,6 +218,15 @@ const Top = styled.div`
   position: absolute;
   top: 6%;
   z-index: 99;
+
+  @media only screen and (max-width: 480px) {
+    top: 2%;
+    width: 65%;
+    flex-direction: column;
+    height: 417px;
+    border-radius: 24px;
+    justify-content: center;
+  }
 `
 
 const Left = styled.div`
@@ -215,12 +237,20 @@ const Left = styled.div`
 
 const Title = styled.h1`
   font-size: 40px;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 28px;
+  }
 `
 
 const Right = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 16px;
+  }
 `
 
 const Content = styled.div`
@@ -229,11 +259,20 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: space-between;
   padding: 20px 0 20px 20px;
+
+  @media only screen and (max-width: 480px) {
+    padding: 0;
+    justify-content: center;
+  }
 `
 
 const Description = styled.p`
   font-size: 18px;
   line-height: 1.5;
+
+  @media only screen and (max-width: 480px) {
+    margin-bottom: 30px;
+  }
 `
 
 const Action = styled.div``
@@ -248,6 +287,11 @@ const Bottom = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   color: var(--text-color-tertiary);
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+    height: 800px;
+  }
 `
 
 const LeftContact = styled.div`
@@ -258,6 +302,11 @@ const LeftContact = styled.div`
   align-self: end;
   font-size: 18px;
   padding: 30px;
+
+  @media only screen and (max-width: 480px) {
+    padding: 0;
+    align-self: center;
+  }
 `
 
 const ContactTitle = styled.h3`
@@ -280,6 +329,10 @@ const ContactText = styled.p``
 const RightContact = styled.div`
   flex: 2;
   padding: 20px;
+
+  @media only screen and (max-width: 480px) {
+    width: 85%;
+  }
 `
 
 const Form = styled.div`
@@ -288,6 +341,10 @@ const Form = styled.div`
   textarea,
   label {
     color: var(--text-color-tertiary);
+  }
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
   }
 `
 
@@ -303,11 +360,20 @@ const RightForm = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+    padding: 8px;
+  }
 `
 
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 480px) {
+    margin: 10px;
+  }
 `
 const LoaderContainer = styled.div`
   width: 100%;
