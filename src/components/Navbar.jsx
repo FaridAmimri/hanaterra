@@ -63,7 +63,7 @@ const Container = styled.div`
 
   @media only screen and (min-width: 481px) and (max-width: 1024px) {
     position: fixed;
-    width: 96vw;
+    width: 100vw;
     z-index: 999;
   }
   @media only screen and (max-width: 480px) {
@@ -123,10 +123,10 @@ const Right = styled.div`
   justify-content: flex-end;
 
   @media only screen and (min-width: 481px) and (max-width: 1024px) {
-    margin-right: 20px;
+    margin-right: 30px;
   }
   @media only screen and (max-width: 480px) {
-    justify-content: center;
+    margin-right: 30px;
   }
 `
 

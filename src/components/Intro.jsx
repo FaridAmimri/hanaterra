@@ -51,7 +51,7 @@ const Container = styled.div`
   padding: 20px 0 20px 20px;
 
   @media only screen and (min-width: 1440px) {
-    height: 540px;
+    height: 650px;
   }
   @media only screen and (min-width: 481px) and (max-width: 1024px) {
     height: auto;
@@ -202,17 +202,18 @@ const InfoContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  z-index: 990;
 
+  @media only screen and (min-width: 1440px) {
+  }
   @media only screen and (min-width: 481px) and (max-width: 1024px) {
     top: 590px;
     left: calc((100vw - 320px) / 2);
-    z-index: 990;
   }
   @media only screen and (max-width: 480px) {
     width: 280px;
     top: 264px;
     left: calc((100vw - 300px) / 2);
-    z-index: 990;
   }
 `
 

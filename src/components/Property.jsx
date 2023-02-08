@@ -70,6 +70,9 @@ const Container = styled.div`
   padding: 50px 0 50px 50px;
   display: flex;
 
+  @media only screen and (min-width: 1440px) {
+    height: 650px;
+  }
   @media only screen and (min-width: 481px) and (max-width: 1024px) {
     height: 900px;
     padding: 30px 0 30px 30px;
