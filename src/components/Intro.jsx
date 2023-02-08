@@ -16,7 +16,7 @@ function Intro() {
           Abidjan Yamoussoukro, proche de l'autoroute du nord.
         </Description>
         <Contact>
-          <ContactText>Offre Promotionnelle de lancement</ContactText>
+          <ContactText>Offre Promotionnelle</ContactText>
           <a href='#contact'>
             <MuiButton text='En savoir plus' />
           </a>
@@ -50,17 +50,18 @@ const Container = styled.div`
   background-color: var(--background-color-primary);
   padding: 20px 0 20px 20px;
 
+  @media only screen and (min-width: 1440px) {
+    height: 540px;
+  }
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    height: auto;
+    flex-direction: column;
+    padding: 0 0 30px 0;
+  }
   @media only screen and (max-width: 480px) {
     height: auto;
     flex-direction: column;
-    padding: 0;
-  }
-  @media only screen and (min-width: 481px) and (max-width: 1024px) {
-    width: 100%;
-    font-size: 50px;
-  }
-  @media only screen and (min-width: 1440px) {
-    height: 540px;
+    padding: 0 0 30px 0;
   }
 `
 
@@ -71,8 +72,11 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
     padding: 0 30px 30px 30px;
+  }
+  @media only screen and (max-width: 480px) {
+    padding: 0 20px 20px 20px;
   }
 `
 
@@ -81,6 +85,10 @@ const Header = styled.span`
   font-size: 18px;
   font-weight: 500;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    font-size: 14px;
+    margin-top: 80px;
+  }
   @media only screen and (max-width: 480px) {
     font-size: 14px;
     margin-top: 80px;
@@ -91,19 +99,28 @@ const Title = styled.h1`
   font-size: 50px;
   width: 95%;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    font-size: 45px;
+    width: 100%;
+    margin-top: 20px;
+  }
   @media only screen and (max-width: 480px) {
     font-size: 40px;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 `
 
 const Description = styled.p`
   font-size: 18px;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    font-size: 17px;
+    margin-top: 20px;
+  }
   @media only screen and (max-width: 480px) {
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 `
 
@@ -115,8 +132,12 @@ const Contact = styled.div`
   padding: 10px;
   border-radius: 12px;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    margin-top: 20px;
+    width: 75%;
+  }
   @media only screen and (max-width: 480px) {
-    margin-top: 10px;
+    margin-top: 20px;
   }
 `
 
@@ -124,6 +145,9 @@ const ContactText = styled.span`
   font-size: 18px;
   color: gray;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    font-size: 17px;
+  }
   @media only screen and (max-width: 480px) {
     font-size: 16px;
   }
@@ -133,8 +157,12 @@ const Right = styled.div`
   flex: 1;
   position: relative;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
     padding-left: 30px;
+    height: 700px;
+  }
+  @media only screen and (max-width: 480px) {
+    padding-left: 20px;
   }
 `
 
@@ -145,6 +173,10 @@ const ImageContainer = styled.div`
   border-radius: 32px 0 0 32px;
   overflow: hidden;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    border-radius: 24px 0 0 24px;
+    height: 700px;
+  }
   @media only screen and (max-width: 480px) {
     border-radius: 24px 0 0 24px;
     height: 360px;
@@ -154,6 +186,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   position: absolute;
   width: 100%;
+  height: 100%;
   right: 0;
   z-index: 99;
 `
@@ -169,11 +202,17 @@ const InfoContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  z-index: 99;
 
-  @media only screen and (max-width: 480px) {
-    top: 264px;
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    top: 590px;
     left: calc((100vw - 320px) / 2);
+    z-index: 990;
+  }
+  @media only screen and (max-width: 480px) {
+    width: 280px;
+    top: 264px;
+    left: calc((100vw - 300px) / 2);
+    z-index: 990;
   }
 `
 

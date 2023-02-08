@@ -61,9 +61,14 @@ const Container = styled.div`
   padding: 10px;
   font-size: 18px;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    position: fixed;
+    width: 96vw;
+    z-index: 999;
+  }
   @media only screen and (max-width: 480px) {
     position: fixed;
-    width: 95vw;
+    width: 100vw;
     z-index: 999;
   }
 `
@@ -80,6 +85,16 @@ const Logo = styled.img`
   width: 25px;
   height: 25px;
   margin-right: 5px;
+  animation: rotation 8s infinite alternate;
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 `
 
 const Center = styled.div`
@@ -91,6 +106,9 @@ const List = styled.ul`
   justify-content: space-around;
   list-style-type: none;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    display: none;
+  }
   @media only screen and (max-width: 480px) {
     display: none;
   }
@@ -103,12 +121,22 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    margin-right: 20px;
+  }
+  @media only screen and (max-width: 480px) {
+    justify-content: center;
+  }
 `
 
 const Hamburger = styled.div`
   display: none;
   cursor: pointer;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    display: flex;
+  }
   @media only screen and (max-width: 480px) {
     display: flex;
   }
@@ -128,8 +156,8 @@ const Menu = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
   z-index: 999;
   transition: all 1s ease;
 
@@ -141,4 +169,5 @@ const Menu = styled.ul`
 const MenuItem = styled.li`
   z-index: 999;
   cursor: pointer;
+  margin-bottom: 100px;
 `

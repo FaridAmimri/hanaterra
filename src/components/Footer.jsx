@@ -79,7 +79,7 @@ function Footer() {
       <Top>
         <Left>
           <Title>
-            Profitez De L'offre Promotionnelle Pour Votre Maison De Rêve
+            Profitez De L'offre Promotionnelle Pour Votre Projet De Rêve
           </Title>
         </Left>
         <Right>
@@ -193,6 +193,9 @@ const Container = styled.div`
   @media only screen and (min-width: 1440px) {
     height: 600px;
   }
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    height: 1200px;
+  }
   @media only screen and (max-width: 480px) {
     height: 1200px;
   }
@@ -203,6 +206,9 @@ const ContactContainer = styled.div`
   align-items: center;
   position: relative;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    flex-direction: column;
+  }
   @media only screen and (max-width: 480px) {
     flex-direction: column;
   }
@@ -219,6 +225,14 @@ const Top = styled.div`
   top: 6%;
   z-index: 99;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    top: 2%;
+    width: 65%;
+    flex-direction: column;
+    height: 417px;
+    border-radius: 24px;
+    justify-content: center;
+  }
   @media only screen and (max-width: 480px) {
     top: 2%;
     width: 65%;
@@ -238,6 +252,9 @@ const Left = styled.div`
 const Title = styled.h1`
   font-size: 40px;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    font-size: 35px;
+  }
   @media only screen and (max-width: 480px) {
     font-size: 28px;
   }
@@ -248,6 +265,9 @@ const Right = styled.div`
   display: flex;
   align-items: center;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    font-size: 17px;
+  }
   @media only screen and (max-width: 480px) {
     font-size: 16px;
   }
@@ -260,6 +280,10 @@ const Content = styled.div`
   justify-content: space-between;
   padding: 20px 0 20px 20px;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    padding: 0;
+    justify-content: center;
+  }
   @media only screen and (max-width: 480px) {
     padding: 0;
     justify-content: center;
@@ -270,6 +294,9 @@ const Description = styled.p`
   font-size: 18px;
   line-height: 1.5;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    margin-bottom: 30px;
+  }
   @media only screen and (max-width: 480px) {
     margin-bottom: 30px;
   }
@@ -288,6 +315,10 @@ const Bottom = styled.div`
   justify-content: flex-end;
   color: var(--text-color-tertiary);
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    flex-direction: column;
+    height: 800px;
+  }
   @media only screen and (max-width: 480px) {
     flex-direction: column;
     height: 800px;
@@ -303,6 +334,10 @@ const LeftContact = styled.div`
   font-size: 18px;
   padding: 30px;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    padding: 0;
+    align-self: center;
+  }
   @media only screen and (max-width: 480px) {
     padding: 0;
     align-self: center;
@@ -316,6 +351,13 @@ const ContactTitle = styled.h3`
 const ContactItem = styled.div`
   display: flex;
   margin: 10px 0;
+
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    justify-content: center;
+  }
+  @media only screen and (max-width: 480px) {
+    justify-content: center;
+  }
 `
 
 const ContactIcon = styled.img`
@@ -327,11 +369,14 @@ const ContactIcon = styled.img`
 const ContactText = styled.p``
 
 const RightContact = styled.div`
-  flex: 2;
+  flex: 3;
   padding: 20px;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    width: 90%;
+  }
   @media only screen and (max-width: 480px) {
-    width: 85%;
+    width: 90%;
   }
 `
 
@@ -343,6 +388,9 @@ const Form = styled.div`
     color: var(--text-color-tertiary);
   }
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    flex-direction: column;
+  }
   @media only screen and (max-width: 480px) {
     flex-direction: column;
   }
@@ -361,6 +409,10 @@ const RightForm = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    flex-direction: column;
+    padding: 8px;
+  }
   @media only screen and (max-width: 480px) {
     flex-direction: column;
     padding: 8px;
@@ -371,6 +423,9 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    margin: 10px;
+  }
   @media only screen and (max-width: 480px) {
     margin: 10px;
   }
@@ -386,6 +441,10 @@ const Notification = styled.p`
   padding-left: 8px;
   color: var(--text-color-primary);
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    margin: 0;
+    text-align: center;
+  }
   @media only screen and (max-width: 480px) {
     margin: 0;
     text-align: center;

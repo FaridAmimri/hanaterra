@@ -36,15 +36,17 @@ function Property() {
           </Item>
         </Statistics>
         <ButtonContainer>
-          <MuiButton
-            text='Voir Le Projet >>>'
-            sx={{ margin: '8px' }}
-            onClick={onClick}
-          />
+          <a href='#video'>
+            <MuiButton
+              text='Voir Le Projet >>>'
+              sx={{ margin: '8px' }}
+              onClick={onClick}
+            />
+          </a>
         </ButtonContainer>
       </Left>
 
-      <Right>
+      <Right id='video'>
         <VideoContainer>
           <Image src={PropertyImg} open={open} alt='Construction immobilier' />
           <Video
@@ -68,9 +70,14 @@ const Container = styled.div`
   padding: 50px 0 50px 50px;
   display: flex;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    height: 900px;
+    padding: 30px 0 30px 30px;
+    flex-direction: column;
+  }
   @media only screen and (max-width: 480px) {
     height: 900px;
-    padding: 20px;
+    padding: 20px 0 20px 20px;
     flex-direction: column;
   }
 `
@@ -82,14 +89,21 @@ const Left = styled.div`
   justify-content: space-between;
   padding: 50px 50px 50px 0;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    padding: 0 20px 20px 20px;
+  }
   @media only screen and (max-width: 480px) {
-    padding: 20px;
+    padding: 0 20px 20px 20px;
   }
 `
 
 const Title = styled.h1`
   font-size: 48px;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
   @media only screen and (max-width: 480px) {
     font-size: 32px;
     margin-bottom: 20px;
@@ -100,6 +114,11 @@ const Description = styled.p`
   width: 90%;
   font-size: 18px;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    width: 100%;
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
   @media only screen and (max-width: 480px) {
     width: 100%;
     font-size: 16px;
@@ -112,6 +131,11 @@ const Statistics = styled.div`
   justify-content: space-between;
   width: 90%;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 20px 0;
+  }
   @media only screen and (max-width: 480px) {
     flex-wrap: wrap;
     width: 100%;
@@ -123,6 +147,9 @@ const Item = styled.div`
   display: flex;
   flex-direction: column;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    margin: 0 20px 20px 0;
+  }
   @media only screen and (max-width: 480px) {
     margin: 0 20px 20px 0;
   }
@@ -132,6 +159,10 @@ const ButtonContainer = styled.div`
   display: flex;
   align-self: flex-end;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    width: 100%;
+    margin: 20px 0;
+  }
   @media only screen and (max-width: 480px) {
     width: 100%;
     margin: 20px 0;
@@ -152,6 +183,10 @@ const Right = styled.div`
   flex: 1;
   position: relative;
 
+  @media only screen and (min-width: 481px) and (max-width: 1024px) {
+    flex: none;
+    height: 470px;
+  }
   @media only screen and (max-width: 480px) {
     height: 255px;
   }
