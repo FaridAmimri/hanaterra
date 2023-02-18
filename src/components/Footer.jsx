@@ -106,7 +106,7 @@ function Footer() {
             </ContactItem>
             <ContactItem>
               <ContactIcon src={PhonePng} alt='phone icon' />
-              <ContactText>+33 6 14 24 64 63</ContactText>
+              <ContactText>+33 6 14 24 65 63</ContactText>
             </ContactItem>
             <ContactItem>
               <ContactIcon src={SendPng} alt='mail icon' />
