@@ -55,8 +55,8 @@ function Footer() {
       setLoading(true)
       emailjs
         .sendForm(
-          'service_vjipffb',
-          'template_rlelajz',
+          'service_e40nn3l',
+          'template_x4isxx3',
           formRef.current,
           'dxK4eOAw61JXwWe-i'
         )
@@ -110,7 +110,7 @@ function Footer() {
             </ContactItem>
             <ContactItem>
               <ContactIcon src={SendPng} alt='mail icon' />
-              <ContactText>hanaterra3@gmail.com</ContactText>
+              <ContactText>hanaterra.fr@gmail.com</ContactText>
             </ContactItem>
           </LeftContact>
 
@@ -295,7 +295,7 @@ const Description = styled.p`
   line-height: 1.5;
 
   @media only screen and (min-width: 481px) and (max-width: 1024px) {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
   @media only screen and (max-width: 480px) {
     margin-bottom: 30px;
