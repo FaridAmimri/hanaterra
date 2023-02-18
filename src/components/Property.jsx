@@ -4,7 +4,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import MuiButton from './MuiButton'
 import PropertyImg from '../assets/property.png'
-import ImmoVideo from '../assets/immo.mp4'
+import SpotVideo from '../assets/spotvideo.mp4'
 
 function Property() {
   const [open, setOpen] = useState(false)
@@ -50,9 +50,8 @@ function Property() {
         <VideoContainer>
           <Image src={PropertyImg} open={open} alt='Construction immobilier' />
           <Video
-            src={ImmoVideo}
+            src={SpotVideo}
             autoPlay
-            loop
             controls
             open={open}
             alt='présentation projet immobilier en video'
@@ -119,12 +118,10 @@ const Description = styled.p`
 
   @media only screen and (min-width: 481px) and (max-width: 1024px) {
     width: 100%;
-    font-size: 17px;
     margin-bottom: 20px;
   }
   @media only screen and (max-width: 480px) {
     width: 100%;
-    font-size: 16px;
     margin-bottom: 20px;
   }
 `

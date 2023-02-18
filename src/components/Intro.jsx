@@ -115,11 +115,9 @@ const Description = styled.p`
   font-size: 18px;
 
   @media only screen and (min-width: 481px) and (max-width: 1024px) {
-    font-size: 17px;
     margin-top: 20px;
   }
   @media only screen and (max-width: 480px) {
-    font-size: 16px;
     margin-top: 20px;
   }
 `
